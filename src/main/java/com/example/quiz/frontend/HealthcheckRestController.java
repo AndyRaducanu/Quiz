@@ -1,5 +1,6 @@
-package com.example.quiz.controller;
+package com.example.quiz.frontend;
 
+import com.example.quiz.dto.HealthcheckDto;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("api/health")
 public class HealthcheckRestController {
     @GetMapping
-    public String healthcheck(){
-        return "It's working!";
+    public HealthcheckDto healthcheck(){
+        HealthcheckDto dto = new HealthcheckDto(true ,"It's working!");
+        return dto;
     }
 }
